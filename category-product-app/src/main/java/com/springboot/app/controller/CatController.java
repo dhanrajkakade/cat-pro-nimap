@@ -30,12 +30,12 @@ public class CatController {
 	CategoryService cs;
 	
 	@GetMapping
-    public ResponseEntity<Page<Category>> getAllCat(
+        public ResponseEntity<Page<Category>> getAllCat(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
         Pageable pageable = PageRequest.of(page, size);
         return new ResponseEntity<>(cs.getAllCategories(pageable), HttpStatusCode.valueOf(200));
-    }
+        }
 	
 	@PostMapping
 	public ResponseEntity<Category> newCat(@Valid @RequestBody Category c){
