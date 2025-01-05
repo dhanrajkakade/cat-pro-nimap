@@ -35,7 +35,7 @@ public class ProController {
 		return new ResponseEntity<>(ps.getAllproducts(pageable),HttpStatusCode.valueOf(200));
 	}
 	
-	@PostMapping("/saveprod")
+	@PostMapping
 	public ResponseEntity<Product> setProduct(@Valid @RequestBody Product p){
 		return new ResponseEntity<Product>(ps.setProduct(p),HttpStatusCode.valueOf(201));
 	}
