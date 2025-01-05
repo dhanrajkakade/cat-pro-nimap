@@ -37,7 +37,7 @@ public class CatController {
         return new ResponseEntity<>(cs.getAllCategories(pageable), HttpStatusCode.valueOf(200));
     }
 	
-	@PostMapping("/savecat")
+	@PostMapping
 	public ResponseEntity<Category> newCat(@Valid @RequestBody Category c){
 		return new ResponseEntity<Category>(cs.newCat(c),HttpStatusCode.valueOf(201));
 	}
